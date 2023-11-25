@@ -28,10 +28,10 @@ streamlit.text(fruityvice_response)
 streamlit.header("Fruityvice Fruit Advice!")
 streamlit.text(fruityvice_response.json())
 
-fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
-streamlit.write('The user entered ', fruit_choice)
-
 #  Normalizes JSON file
 fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 # Converts JSON to a Data Frame
 streamlit.dataframe(fruityvice_normalized)
+
+fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
+streamlit.write('The user entered ', fruit_choice)
