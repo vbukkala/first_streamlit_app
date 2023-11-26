@@ -2,6 +2,7 @@ import streamlit
 import pandas as pd
 import requests
 import snowflake.connector
+from urllib.error import URLError
 
 streamlit.title('My Parents Healthy New Diner')
 
@@ -45,3 +46,5 @@ streamlit.dataframe(my_data_rows)
 # add another entry list
 fruit_choice_2 = streamlit.text_input('What fruit would you like to add?','jackfruit')
 streamlit.write('Thanks for adding ',fruit_choice_2)
+#insert the entered value in the relevant table
+my_cur.execute("INSERT INTO PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values ('from streamlit')");
